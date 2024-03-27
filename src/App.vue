@@ -230,7 +230,7 @@ export default {
               // 这里处理后端的响应
               console.log('转换成功', response);
               // 假设后端返回的response中包含音频文件的URL
-              this.audioUrl = response.data; // 更新audioUrl状态
+              this.audioUrl = "https://cryptic-stream-41825-70b422ac31aa.herokuapp.com/audio/demo.mp3"; // 更新audioUrl状态
               this.showError = false; // 成功获取音频后不显示错误信息
               // 例如，如果后端返回音频文件的URL，可以在这里处理
             })
