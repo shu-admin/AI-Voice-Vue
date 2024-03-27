@@ -162,7 +162,7 @@ export default {
       fileList: [],
       currentView: 'audioToText', // 当前视图
       currentViewTitle: '语音转文字', // 当前视图的标题
-      uploadUrl: 'http://127.0.0.1:5000/process',
+      uploadUrl: 'https://cryptic-stream-41825-70b422ac31aa.herokuapp.com/process',
       oneBestText: '',
       textToSpeechInput: '',
     };
@@ -225,7 +225,7 @@ export default {
           };
 
           // 使用axios发送POST请求到后端
-          this.$axios.post('http://127.0.0.1:5000/text2speech', requestBody)
+          this.$axios.post('https://cryptic-stream-41825-70b422ac31aa.herokuapp.com/text2speech', requestBody)
             .then(response => {
               // 这里处理后端的响应
               console.log('转换成功', response);
