@@ -214,6 +214,7 @@ export default {
   },
     convertTextToSpeech() {
       // 文字转语音的处理逻辑
+      this.audioUrl = ''; // 清除之前的音频URL
       // 构建请求体，确保与后端接收的格式一致
       const requestBody = {
             text: this.textToSpeechInput, // 文字内容
