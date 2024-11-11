@@ -7,10 +7,17 @@
           default-active="1"
           class="aside-menu"
           @select="handleSelect"
+          router
         >
-          <el-menu-item index="1">语音转文字</el-menu-item>
-          <el-menu-item index="2">文字转语音</el-menu-item>
-        </el-menu>
+          <el-submenu index="1">
+            <template #title>
+              <i class="el-icon-s-grid"></i>
+              <span>语音工具</span>
+            </template>
+            <el-menu-item index="1-1">语音转文字</el-menu-item>
+            <el-menu-item index="1-2">文字转语音</el-menu-item>
+          </el-submenu>
+</el-menu>
       </el-aside>
 
       <!-- 右侧内容 -->
@@ -122,6 +129,22 @@
             </div>
           </div>
         </el-main>
+
+        <!-- 页脚 -->
+        <el-footer style="background-color: #FFFFFF; text-align: center;  padding: 20px;">
+          <el-text style="font-size: 14px; color: #FFF;">
+            <el-icon style="margin-right: 8px;"><Opportunity /></el-icon>
+            FunnyTools
+          </el-text>
+          <el-text style="font-size: 12px; color: #BDC3C7;">
+            Powered by yuanri. © {{ currentYear }}
+          </el-text>
+          <div style="margin-top: 10px;">
+            <el-icon><i class="el-icon-facebook"></i></el-icon>
+            <el-icon><i class="el-icon-twitter"></i></el-icon>
+            <el-icon><i class="el-icon-github"></i></el-icon>
+          </div>
+        </el-footer>
       </el-container>
     </el-container>
   </div>
@@ -131,6 +154,7 @@
 export default {
   data() {
     return {
+      currentYear: new Date().getFullYear(), // 获取当前年份
       audioUrl: '', // 用于存储音频文件的URL
       showError: false, // 是否显示错误信息
       aue: 'lame',
